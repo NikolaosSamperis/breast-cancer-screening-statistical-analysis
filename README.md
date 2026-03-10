@@ -3,7 +3,7 @@
 ![R](https://img.shields.io/badge/language-R-blue)
 ![Statistics](https://img.shields.io/badge/method-Logistic%20Regression-orange)
 ![Domain](https://img.shields.io/badge/domain-Healthcare-green)
-![License](https://img.shields.io/badge/license-Apache%202.0-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 Reproducible statistical analysis of patient-level healthcare data to identify factors associated with **breast cancer screening uptake**.
 
@@ -289,6 +289,6 @@ The dataset used in this project is a **synthetic dataset created for analytical
 
 ## License
 
-This project is licensed under the **Apache License 2.0**.
+This project is licensed under the **MIT License**.
 
-See the [LICENSE](LICENSE) file for details.
+See the [LICENSE](LICENSE.txt) file for details.
