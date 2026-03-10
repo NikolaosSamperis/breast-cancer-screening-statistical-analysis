@@ -3,6 +3,7 @@
 ![R](https://img.shields.io/badge/language-R-blue)
 ![Statistics](https://img.shields.io/badge/method-Logistic%20Regression-orange)
 ![Domain](https://img.shields.io/badge/domain-Healthcare-green)
+![License](https://img.shields.io/badge/license-Apache%202.0-blue)
 
 Reproducible statistical analysis of patient-level healthcare data to identify factors associated with **breast cancer screening uptake**.
 
@@ -23,7 +24,12 @@ Breast cancer screening programmes play a critical role in early detection and i
 
 This project analyses patient-level data from multiple clinical teams to investigate whether demographic and behavioural characteristics are associated with a patient's decision to attend breast cancer screening.
 
-The analysis aims to identify **independent predictors of screening attendance while accounting for differences between clinical teams**.
+The analysis aims to:
+
+- evaluate factors associated with breast cancer screening attendance
+- assess patterns of missing data
+- examine whether patient populations differ across clinical teams
+- identify independent predictors of screening uptake using a multivariable logistic regression model while accounting for variation between clinical teams
 
 ---
 
@@ -50,6 +56,8 @@ Each observation includes the following variables:
 | Screening decision | Whether the patient accepted screening (Yes/No) |
 | Clinical team | Identifier of the clinical team |
 
+The `clinical_team` variable was added during data preparation to indicate the source dataset after merging the 12 individual clinical team files.
+
 Some variables contain missing values, which were analysed to assess potential patterns and bias.
 
 Overall, **91% of patients had complete data across all variables**.
@@ -64,7 +72,7 @@ Raw Data → Data Cleaning → Validation → Exploratory Analysis → Logistic 
 
 ---
 
-### 1 Data Discovery
+### 1. Data Discovery
 Initial inspection of the raw datasets to assess:
 
 - variable structure
@@ -72,7 +80,7 @@ Initial inspection of the raw datasets to assess:
 - duplicated records
 - summary statistics
 
-### 2 Data Cleaning and Harmonisation
+### 2. Data Cleaning and Harmonisation
 
 Data from 12 separate datasets were cleaned and merged into a single analysis dataset.
 
@@ -83,7 +91,7 @@ Steps included:
 - harmonising data types
 - ensuring consistent dataset structure
 
-### 3 Data Validation
+### 3. Data Validation
 
 Validation checks ensured data integrity:
 
@@ -91,7 +99,7 @@ Validation checks ensured data integrity:
 - missing data assessment
 - plausibility checks for numeric variables
 
-### 4 Exploratory Data Analysis
+### 4. Exploratory Data Analysis
 
 Exploratory analyses examined:
 
@@ -99,7 +107,7 @@ Exploratory analyses examined:
 - variation in patient characteristics across clinical teams
 - screening participation rates
 
-### 5 Statistical Modelling
+### 5. Statistical Modelling
 
 A **multivariable logistic regression model** was used to assess independent predictors of screening attendance while adjusting for clinical team.
 
@@ -171,7 +179,7 @@ Alcohol consumption was **not independently associated with screening attendance
 
 **Clinical Teams**
 
-After adjusting for patient characteristics, most differences between clinical teams were attenuated. Only one team (DN08) showed significantly higher screening uptake compared with the reference team.
+After adjusting for patient characteristics, most differences between clinical teams were attenuated. Only one team (DN08) showed significantly higher screening uptake compared with the reference team (DN01).
 
 ---
 
@@ -218,19 +226,27 @@ breast-cancer-screening-statistical-analysis
 
 # Technologies Used
 
-- **R**
-- **RStudio**
+The analysis was conducted using the following computational environment:
 
-Main R packages:
+- **R** (version 4.5.2)
+- **RStudio** (version 2026.01.0+392)
+- **Operating System:** Windows 10 x64
 
-- tidyverse
-- naniar
-- ComplexUpset
-- broom
-- effectsize
-- janitor
-- skimr
-- car
+### Main R Packages
+
+| Package | Version | Purpose |
+|-------|--------|--------|
+| tidyverse | 2.0.0 | Data manipulation, transformation, and visualisation |
+| naniar | 1.1.0 | Missing data exploration and visualisation |
+| ComplexUpset | 1.3.3 | Visualisation of missing data patterns |
+| effectsize | 1.0.1 | Calculation of statistical effect sizes |
+| binom | 1.1.1.1 | Binomial confidence intervals |
+| broom | 1.0.12 | Tidying model outputs |
+| scales | 1.4.0 | Plot formatting and scaling |
+| janitor | 2.2.1 | Data cleaning utilities |
+| skimr | 2.2.2 | Structured dataset summaries |
+| car | 3.1.5 | Regression diagnostics (Variance Inflation Factor) |
+| sessioninfo | 1.2.3 | Recording session and package information |
 
 ---
 
@@ -265,4 +281,14 @@ King’s College London
 
 ## Disclaimer
 
-This repository is intended for demonstration purposes to showcase statistical analysis and reproducible research workflows using healthcare data.
+This repository is intended for demonstration purposes to showcase statistical analysis and reproducible research workflows.
+
+The dataset used in this project is a **synthetic dataset created for analytical assessment purposes** and does not represent real patient data.
+
+---
+
+## License
+
+This project is licensed under the **Apache License 2.0**.
+
+See the [LICENSE](LICENSE) file for details.
