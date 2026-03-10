@@ -31,7 +31,7 @@ The analysis aims to:
 - examine whether patient populations differ across clinical teams
 - identify independent predictors of screening uptake using a multivariable logistic regression model while accounting for variation between clinical teams
 
-> For a detailed description of the analytical methods, statistical results, and full interpretation of the findings, see the full report available in the [`report`](report/) directory of this repository.
+> For a detailed description of the analytical methods, statistical results, and full interpretation of the findings, see the full report and appendix available in the [`report`](report/) directory of this repository.
 ---
 
 # Research Question
